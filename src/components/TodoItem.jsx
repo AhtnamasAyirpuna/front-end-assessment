@@ -184,7 +184,9 @@ export default function TodoItem({ todo }) {
                 {itinerary && (
                   <>
                     <Card.Text className="fw-bold">Itinerary:</Card.Text>
-                    <Card.Text>{itinerary}</Card.Text>
+                    <Card.Text style={{ whiteSpace: "pre-wrap", display: "block" }}>
+                      {itinerary}
+                    </Card.Text>
                   </>
                 )}
               </Col>
