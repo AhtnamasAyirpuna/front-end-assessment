@@ -78,7 +78,7 @@ export default function TodoPage() {
 
           {/* Trip Form */}
           <Row className="mb-3">
-            <Col lg={4} md={6} xs={12} className="mb-3 mb-lg-0">
+            <Col lg={3} md={6} xs={12} className="mb-3 mb-lg-0">
               <Form.Control
                 type="text"
                 value={tripName}
@@ -86,7 +86,7 @@ export default function TodoPage() {
                 placeholder="Trip name"
               />
             </Col>
-            <Col lg={4} md={6} xs={12} className="mb-3 mb-lg-0">
+            <Col lg={3} md={6} xs={12} className="mb-3 mb-lg-0">
               <Form.Control
                 type="text"
                 value={venue}
@@ -94,26 +94,14 @@ export default function TodoPage() {
                 placeholder="Venue"
               />
             </Col>
-            <Col lg={4} md={12} xs={12}>
-              <Form.Control
-                as="textarea"
-                rows={2}
-                value={itinerary}
-                onChange={(e) => setItinerary(e.target.value)}
-                placeholder="Itinerary (optional)"
-              />
-            </Col>
-          </Row>
-
-          <Row className="mb-3">
-            <Col lg={6} md={6} xs={12} className="mb-3 mb-lg-0">
+            <Col lg={3} md={6} xs={12} className="mb-3 mb-lg-0">
               <Form.Control
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
             </Col>
-            <Col lg={6} md={6} xs={12}>
+            <Col lg={3} md={6} xs={12}>
               <Form.Select
                 value={vacationType}
                 onChange={(e) => setVacationType(e.target.value)}
@@ -122,6 +110,18 @@ export default function TodoPage() {
                 <option value="hiking">Hiking Trip</option>
                 <option value="business">Business Travel</option>
               </Form.Select>
+            </Col>
+          </Row>
+
+          <Row className="mb-3">
+          <Col xs={12}>
+              <Form.Control
+                as="textarea"
+                rows={2}
+                value={itinerary}
+                onChange={(e) => setItinerary(e.target.value)}
+                placeholder="Itinerary (optional)"
+              />
             </Col>
           </Row>
 
