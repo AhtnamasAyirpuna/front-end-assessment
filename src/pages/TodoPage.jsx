@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo } from '../slices/todoSlice.js';
 import { Card, Form, Button, Row, Col } from 'react-bootstrap';
@@ -70,14 +70,15 @@ export default function TodoPage() {
           style={{
             borderRadius: '5px',
             background: 'rgba(255, 255, 255, 0.5)',
-            width: '80%',
+            width: '100%',
+            maxWidth: '900px',
           }}
         >
           <h4 className="fw-bold">Your Travel Todos</h4>
 
           {/* Trip Form */}
           <Row className="mb-3">
-            <Col>
+            <Col lg={4} md={6} xs={12} className="mb-3 mb-lg-0">
               <Form.Control
                 type="text"
                 value={tripName}
@@ -85,7 +86,7 @@ export default function TodoPage() {
                 placeholder="Trip name"
               />
             </Col>
-            <Col>
+            <Col lg={4} md={6} xs={12} className="mb-3 mb-lg-0">
               <Form.Control
                 type="text"
                 value={venue}
@@ -93,7 +94,7 @@ export default function TodoPage() {
                 placeholder="Venue"
               />
             </Col>
-            <Col>
+            <Col lg={4} md={12} xs={12}>
               <Form.Control
                 as="textarea"
                 rows={2}
@@ -105,14 +106,14 @@ export default function TodoPage() {
           </Row>
 
           <Row className="mb-3">
-            <Col>
+            <Col lg={6} md={6} xs={12} className="mb-3 mb-lg-0">
               <Form.Control
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
             </Col>
-            <Col>
+            <Col lg={6} md={6} xs={12}>
               <Form.Select
                 value={vacationType}
                 onChange={(e) => setVacationType(e.target.value)}
